@@ -40,3 +40,20 @@ Add this line (example):
 ```
 
 ✅ This proof must be visible in your browser screenshot submission.
+
+## Footer Requirement (Week 4 — Mini-Sprint)
+
+The site footer displays the site version, deployment date, and author, in the following exact format:
+Pravin Mishra Portfolio v1.0 — Deployed on 4th August 2026 — By Judah Oyekunle
+
+### How the Date Is Generated
+The deployment date is generated automatically using JavaScript. A `<span id="deployDate">` placeholder sits in the footer HTML, and a script fills it in with the current date — formatted as `DD Mon YYYY` — every time the page loads.
+
+<!-- Script that fills in the current date -->
+<script>
+  const options = { day: '2-digit', month: 'short', year: 'numeric' };
+  document.getElementById('deployDate').textContent =
+    new Date().toLocaleDateString('en-GB', options).replace(',', '');
+</script>
+
+This means the displayed date always reflects the date the page was actually loaded, with no manual updating required on future deployments.
